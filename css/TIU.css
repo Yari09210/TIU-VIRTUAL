@@ -67,7 +67,7 @@ body {
 .clock-section {
     text-align: center;
     z-index: 10;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .clock {
