@@ -71,7 +71,7 @@ body {
 
 .clock {
     display: inline-block;
-    background: #d9d9f5;
+    background: #dedafe;
     color: #000000;
     font-size: 25px;
     font-weight: 500; /* Antes estaba en 600 */
@@ -88,6 +88,7 @@ body {
 }
 
 /* Capa de Nubes Flotantes */
+/* Ajuste de color para las nubes */
 .nubes-background {
     position: absolute;
     top: 35%;
@@ -100,6 +101,16 @@ body {
     z-index: 2;
     pointer-events: none;
     animation: moverNubes 25s linear infinite;
+
+    /* --- Agrega esto para igualar el color azul/lila vivo --- */
+    filter: drop-shadow(0px 0px 0px #dedafe);
+}
+
+/* Ajuste de color para la ilustración del campus/fondo abajo */
+.fondoabajo, 
+.app-container::after {
+    /* Mantiene tus reglas actuales... */
+    filter: drop-shadow(0px 0px 0px #dedafe);
 }
 
 .fondoabajo {
