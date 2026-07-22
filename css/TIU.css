@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
 
 /* Reinicio General */
 * {
@@ -54,12 +54,10 @@ body {
 .header-title {
     font-family: 'Oswald', sans-serif;
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 500; /* Antes estaba en 700 */
     color: #000000;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    
-    /* Mueve el texto a la izquierda hacia la flecha */
     transform: translateX(-100px); 
 }
 
@@ -76,7 +74,7 @@ body {
     background: #d9d9f5;
     color: #000000;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 500; /* Antes estaba en 600 */
     padding: 8px 39px;
     border-radius: 10px;
     letter-spacing: 0.5px;
@@ -86,14 +84,13 @@ body {
     margin-top: 12px;
     font-size: 14px;
     color: #313131;
-    font-weight: 500;
+    font-weight: 400; /* Antes estaba en 500 */
 }
 
 /* Capa de Nubes Flotantes */
-/* Capa de Nubes Flotantes */
 .nubes-background {
     position: absolute;
-    top: 35%; /* Posición exacta de la franja de nubes */
+    top: 35%;
     left: 0;
     width: 300%;
     height: 140px;
@@ -105,18 +102,17 @@ body {
     animation: moverNubes 25s linear infinite;
 }
 
-/* Fondo Abajo: Posicionado EXACTAMENTE pegado al borde inferior de las nubes (38% + 120px) */
 .fondoabajo {
     position: absolute;
-    top: calc(38% + 115px); /* Se ajusta con calc para pegarlo justo debajo */
+    top: calc(38% + 115px);
     left: 0;
     width: 100%;
-    height: 160px; /* Ajusta la altura que prefieras para la ilustración */
+    height: 160px;
     background-image: url("../img/fondoabajo.png");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
-    z-index: 1; /* Queda detrás del carnet y las nubes para no obstruir */
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -125,26 +121,19 @@ body {
     100% { transform: translateX(-50%); }
 }
 
-/* Fondo Inferior del Campus (Abarca la zona inferior del celular) */
 .app-container::after {
     content: "";
     position: absolute;
-    top: calc(35% + 60px); /* Nace pegado a las nubes */
+    top: calc(35% + 60px);
     bottom: 0;
     left: -60px;
-    width: 130%; /* Corregido: ocupa todo el ancho del contenedor */
+    width: 130%;
     background-image: url("../img/fondoabajo.png");
     background-repeat: no-repeat;
     background-position: top center;
-    
-    /* 
-       '100% auto' o 'contain' hace que la imagen se ajuste a los bordes laterales 
-       y muestre la ilustración completa sin recortarla.
-    */
     background-size: 100% auto; 
-    
     opacity: 0.8;
-    z-index: 1; /* Queda por detrás de la tarjeta */
+    z-index: 1;
     pointer-events: none;
     margin-top: 60px;
 }
@@ -158,7 +147,6 @@ body {
     z-index: 5;
 }
 
-/* Foto de Perfil Circular */
 .profile-photo {
     width: 140px;
     height: 140px;
@@ -180,7 +168,6 @@ body {
     object-fit: cover;
 }
 
-/* Tarjeta Blanca de Información */
 .card-content {
     background: #ffffff;
     border-radius: 16px;
@@ -189,16 +176,19 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Nombre con Fuente Condensada (Exacto al original) */
+/* Nombre Estirado pero SIN negrita */
 .student-name {
     font-family: 'Oswald', sans-serif;
     color: #e9231c;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 400; /* Le quitamos la negrita pesada */
     line-height: 1.15;
     margin-bottom: 16px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+
+    display: inline-block;
+    transform: scaleY(1.1);
 }
 
 .info-group {
@@ -206,23 +196,23 @@ body {
 }
 
 .label {
-    color: #2c2c2e;
+    color: #555555;
     font-size: 11px;
-    font-weight: 500;
+    font-weight: 400; /* Texto normal */
     margin-bottom: 2px;
 }
 
 .value {
     color: #0d1e3a;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600; /* Un semi-bold ligero en lugar de 700 */
 }
 
 .career-title {
     color: #122238;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 600; /* Bajado de 800 a 600 */
     margin-top: 22px;
     margin-bottom: 6px;
     letter-spacing: -0.2px;
@@ -231,7 +221,7 @@ body {
 .location {
     color: #2c2c2e;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500; /* Bajado de 600 a 500 */
     display: flex;
     align-items: center;
     justify-content: center;
