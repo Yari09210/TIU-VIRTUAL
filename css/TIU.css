@@ -146,12 +146,12 @@ body {
     opacity: 0.8;
     z-index: 1;
     pointer-events: none;
-    margin-top: 60px;
+    margin-top: 10px;
 }
 
 /* Contenedor del Carnet */
 .id-card-wrapper {
-    margin-top: 67%;
+    margin-top: 65%;
     margin-bottom: 20px;
     width: 100%;
     position: relative;
