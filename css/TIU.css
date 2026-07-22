@@ -91,7 +91,7 @@ body {
 /* Ajuste de color para las nubes */
 .nubes-background {
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 0;
     width: 300%;
     height: 140px;
@@ -151,7 +151,7 @@ body {
 
 /* Contenedor del Carnet */
 .id-card-wrapper {
-    margin-top: 80%;
+    margin-top: 67%;
     margin-bottom: 20px;
     width: 100%;
     position: relative;
