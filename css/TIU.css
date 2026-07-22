@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reinicio General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f4f5f8;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor Celular */
+.app-container {
+    width: 100%;
+    max-width: 412px;
+    height: 100vh;
+    background-color: #f6f7fc;
+    position: relative;
+    overflow: hidden;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    z-index: 10;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.header-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    
+    /* Mueve el texto a la izquierda hacia la flecha */
+    transform: translateX(-100px); 
+}
+
+/* Bloque Reloj */
+.clock-section {
+    text-align: center;
+    z-index: 10;
+    padding-top: 10px;
+}
+
+.clock {
+    display: inline-block;
+    background: #d9d9f5;
+    color: #000000;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 8px 36px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+}
+
+.date {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555869;
+    font-weight: 500;
+}
+
+/* Capa de Nubes Flotantes */
+/* Capa de Nubes Flotantes */
+.nubes-background {
+    position: absolute;
+    top: 35%; /* Posición exacta de la franja de nubes */
+    left: 0;
+    width: 300%;
+    height: 140px;
+    background-image: url("../img/nubes.png");
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    z-index: 2;
+    pointer-events: none;
+    animation: moverNubes 25s linear infinite;
+}
+
+/* Fondo Abajo: Posicionado EXACTAMENTE pegado al borde inferior de las nubes (38% + 120px) */
+.fondoabajo {
+    position: absolute;
+    top: calc(38% + 115px); /* Se ajusta con calc para pegarlo justo debajo */
+    left: 0;
+    width: 100%;
+    height: 160px; /* Ajusta la altura que prefieras para la ilustración */
+    background-image: url("../img/fondoabajo.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    z-index: 1; /* Queda detrás del carnet y las nubes para no obstruir */
+    pointer-events: none;
+}
+
+@keyframes moverNubes {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Fondo Inferior del Campus (Abarca la zona inferior del celular) */
+.app-container::after {
+    content: "";
+    position: absolute;
+    top: calc(35% + 60px); /* Nace pegado a las nubes */
+    bottom: 0;
+    left: -60px;
+    width: 130%; /* Corregido: ocupa todo el ancho del contenedor */
+    background-image: url("../img/fondoabajo.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    
+    /* 
+       '100% auto' o 'contain' hace que la imagen se ajuste a los bordes laterales 
+       y muestre la ilustración completa sin recortarla.
+    */
+    background-size: 100% auto; 
+    
+    opacity: 0.8;
+    z-index: 1; /* Queda por detrás de la tarjeta */
+    pointer-events: none;
+    margin-top: 60px;
+}
+
+/* Contenedor del Carnet */
+.id-card-wrapper {
+    margin-top: 67%;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+/* Foto de Perfil Circular */
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    background: #ffffff;
+    margin-top: -120px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tarjeta Blanca de Información */
+.card-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 20px 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Nombre con Fuente Condensada (Exacto al original) */
+.student-name {
+    font-family: 'Oswald', sans-serif;
+    color: #e9231c;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-group {
+    margin-bottom: 12px;
+}
+
+.label {
+    color: #2c2c2e;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.value {
+    color: #0d1e3a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.career-title {
+    color: #122238;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 22px;
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+}
+
+.location {
+    color: #2c2c2e;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
