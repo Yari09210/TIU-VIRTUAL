@@ -97,10 +97,10 @@ body {
     height: 140px;
     background-image: url("../img/nubes.png");
     background-repeat: repeat-x;
-    background-size: 50% 100%;
+    background-size: 80% 120%;
     z-index: 2;
     pointer-events: none;
-    animation: moverNubes 25s linear infinite;
+    animation: moverNubes 6s linear infinite;
 
     /* --- Agrega esto para igualar el color azul/lila vivo --- */
     filter: drop-shadow(0px 0px 0px #dedafe);
@@ -199,7 +199,7 @@ body {
     letter-spacing: 0.5px;
 
     display: inline-block;
-    transform: scaleY(1.1);
+    transform: scaleY(0.9);
 }
 
 .info-group {
